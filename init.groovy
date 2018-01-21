@@ -16,6 +16,3 @@ jenkins.save()
 
 jenkins.setAuthorizationStrategy(new FullControlOnceLoggedInAuthorizationStrategy())
 jenkins.save()
-
-def seedJob = Jenkins.instance.getItem(env.SEED_JOB_NAME)
-jenkins.queue.schedule(seedJob, 10)

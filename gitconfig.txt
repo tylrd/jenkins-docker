@@ -1,3 +1,0 @@
-[user]
-	name = Taylor Daugherty
-	email = mdaugherty6@gmail.com

@@ -14,7 +14,6 @@ docker run --name jenkins \
 	--link dind:docker \
 	-e JENKINS_USER=admin -e JENKINS_PASSWORD=admin \
 	-e DOCKER_HOST='tcp://docker:2375' \
-	-e SEED_JOB_NAME='seed' \
 	-d bc/jenkins 
 
 docker logs -f jenkins

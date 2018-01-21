@@ -45,8 +45,6 @@ class JobScriptsSpec extends Specification {
 
         then:
         noExceptionThrown()
-        Jenkins.instance.getItem("seed")
-        Jenkins.instance.queue.schedule(, 10)
 
         where:
         file << TestUtil.getJobFiles()
