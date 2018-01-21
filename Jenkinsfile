@@ -1,5 +1,5 @@
 node {
 
-  jobDsl targets: 'jobs-dsl/src/jobs/*.groovy'
+  jobDsl targets: 'job-dsl/src/jobs/*.groovy'
 
 }
