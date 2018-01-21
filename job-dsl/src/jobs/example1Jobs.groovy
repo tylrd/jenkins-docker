@@ -5,17 +5,20 @@ folder(basePath) {
     description 'This example shows basic folder/job creation.'
 }
 
-pipelineJob("$basePath/example") {
-    definition {
-        cps {
-            sandbox()
-        }
-        cpsScm {
-            scm {
-                git repo
-                scriptPath "Jenkinsfile"
-            }
-        }
-    }
+["1, 2"].each {num -> 
+	pipelineJob("$basePath/example-$num") {
+		definition {
+			cps {
+				sandbox()
+			}
+			cpsScm {
+				scm {
+					git repo
+					scriptPath "Jenkinsfile"
+				}
+			}
+		}
+	}
 }
+
 
