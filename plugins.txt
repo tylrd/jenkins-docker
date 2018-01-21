@@ -6,3 +6,4 @@ junit:latest
 credentials-binding:latest
 pipeline-stage-view:latest
 slack:latest
+job-dsl:latest
