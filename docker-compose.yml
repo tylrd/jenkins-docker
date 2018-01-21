@@ -1,0 +1,11 @@
+version: '3'
+services:
+  jenkins:
+    container_name: "test-jenkins"
+    build: .
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      - JENKINS_USER
+      - JENKINS_PASSWORD

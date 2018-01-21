@@ -1,0 +1,8 @@
+git:latest
+workflow-aggregator:latest
+gradle:latest
+filesystem_scm:experimental
+junit:latest
+credentials-binding:latest
+pipeline-stage-view:latest
+slack:latest
