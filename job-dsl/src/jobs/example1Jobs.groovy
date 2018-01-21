@@ -7,6 +7,9 @@ folder(basePath) {
 
 pipelineJob("$basePath/example") {
     definition {
+        cps {
+            sandbox()
+        }
         cpsScm {
             scm {
                 git repo
