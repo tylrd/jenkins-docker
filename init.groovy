@@ -5,13 +5,14 @@ import hudson.security.*
 
 def env = System.getenv()
 
-println "--> creating local user 'admin'"
-println "--> password for local user 'admin'"
+println "--> user: ${env.JENKINS_USER}"
+println "--> password: ${env.JENKINS_PASSWORD}"
 
-def hudsonRealm = new HudsonPrivateSecurityRealm(false)
-hudsonRealm.createAccount(env.JENKINS_USER, env.JENKINS_PASSWORD)
-Jenkins.instance.setSecurityRealm(hudsonRealm)
+def jenkins = Jenkins.getInstance()
+def realm = new HudsonPrivateSecurityRealm(false) 
+realm.createAccount(env.JENKINS_USER, env.JENKINS_PASSWORD)
+jenkins.setSecurityRealm(realm)
+jenkins.save()
 
-def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
-Jenkins.instance.setAuthorizationStrategy(strategy)
-Jenkins.instance.save()
+jenkins.setAuthorizationStrategy(new FullControlOnceLoggedInAuthorizationStrategy())
+jenkins.save()
