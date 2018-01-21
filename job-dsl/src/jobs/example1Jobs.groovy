@@ -1,5 +1,5 @@
 String basePath = 'jobs'
-String repo = 'https://github.com/tylrd/jenkins-docker'
+String repo = 'git@github.com:tylrd/jenkins-docker.git'
 
 folder(basePath) {
     description 'This example shows basic folder/job creation.'
