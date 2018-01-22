@@ -23,3 +23,4 @@ RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 COPY --chown=jenkins files/log.properties /var/jenkins_home/log.properties
 COPY files/init.groovy /usr/share/jenkins/ref/init.groovy.d/init.groovy
 COPY files/bootstrap.xml /usr/share/jenkins/ref/jobs/seed/config.xml
+COPY files/javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration.xml /usr/share/jenkins/ref/javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration.xml
