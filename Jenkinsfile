@@ -1,5 +1,8 @@
 node {
 
-  jobDsl targets: 'job-dsl/src/jobs/*.groovy'
+  jobDsl targets: './job-dsl/src/jobs/*.groovy',
+           removedJobAction: 'DELETE',
+           removedViewAction: 'DELETE',
+           lookupStrategy: 'SEED_JOB'
 
 }

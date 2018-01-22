@@ -21,5 +21,5 @@ ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false -Djava.util.logging.config
 COPY files/plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 COPY --chown=jenkins files/log.properties /var/jenkins_home/log.properties
-COPY init.groovy /usr/share/jenkins/ref/init.groovy.d/init.groovy
+COPY files/init.groovy /usr/share/jenkins/ref/init.groovy.d/init.groovy
 COPY files/bootstrap.xml /usr/share/jenkins/ref/jobs/seed/config.xml
