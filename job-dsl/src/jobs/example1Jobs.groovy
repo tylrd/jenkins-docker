@@ -6,7 +6,7 @@ folder(basePath) {
 }
 
 def jobs = readFileFromWorkspace('./jobs.json')
-def jsonJobs = new groovy.json.JsonSlurper().parse(jobs)
+def jsonJobs = new groovy.json.JsonSlurper().parseText(jobs)
 
 jsonJobs.jobs.each { num ->
     pipelineJob("$basePath/example-$num") {
