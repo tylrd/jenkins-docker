@@ -5,7 +5,10 @@ folder(basePath) {
     description 'This example shows basic folder/job creation.'
 }
 
-["1", "2"].each { num ->
+def jobs = readFileFromWorkspace('./jobs.json')
+def jsonJobs = new groovy.json.JsonSlurper().parse(jobs)
+
+jsonJobs.jobs.each { num ->
     pipelineJob("$basePath/example-$num") {
         definition {
             cpsScm {
